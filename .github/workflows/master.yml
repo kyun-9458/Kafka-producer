@@ -36,6 +36,6 @@ jobs:
 
     - name: deploy with AWS codeDeploy
       run: aws deploy create-deployment
-        --application-name datalake-deploy
+        --application-name datalake_deploy
         --deployment-group-name kafka-deploy
         --s3-location bucket=datalake-actions-deploy-kyun,bundleType=tgz,key=kafka-producer/kafka-producer.tar.gz
