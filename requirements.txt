@@ -1,4 +1,4 @@
 #confluent-kafka==2.3.0 # 무슨 이유인지 모르겠지만 기존 2.3.0이 안돼서 아래 설치한 버전으로 진행
 confluent-kafka==2.10.0
-
 PyYAML==6.0.1
+requests
