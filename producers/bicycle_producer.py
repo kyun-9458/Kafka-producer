@@ -14,7 +14,11 @@ class BicycleProducer():
     def __init__(self, topic):
         self.topic = topic
         self.conf = {'bootstrap.servers': BROKER_LST,
-                     'compression.type':'lz4'}
+                     'compression.type':'lz4',
+                     'enable.idempotence': 'true',                  #멱등성 설정 파라미터
+                     'max.in.flight.requests.per.connection': '5',  #멱등성 설정 파라미터
+                     'acks': 'all'                                  #멱등성 설정 파라미터
+        }
         self.producer = Producer(self.conf)
         self._set_logger()
 
