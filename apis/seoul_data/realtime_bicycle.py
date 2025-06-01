@@ -7,10 +7,11 @@ import time
 import os
 import traceback
 
-
+# open API 호출 Class
 class RealtimeBicycle:
 
     def __init__(self, dataset_nm):
+        # 서울시 데이터 발급 키 비식별화를 위한 로직, 실제 값은 aws secrete에 관리
         self.auth_key = '##auth_key_seoul_data##'
         self.api_url = 'http://openapi.seoul.go.kr:8088'
         self.log_dir = '/log/seoul_api'

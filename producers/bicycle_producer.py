@@ -17,7 +17,7 @@ class BicycleProducer():
                      'compression.type':'lz4',
                      'enable.idempotence': 'true',                  #멱등성 설정 파라미터
                      'max.in.flight.requests.per.connection': '5',  #멱등성 설정 파라미터
-                     'acks': 'all'                                  #멱등성 설정 파라미터
+                     'acks': 'all'                                  #멱등성 설정 파라미터 - Leader의 최소 동기화 복제본 수와 Follower에 기록된 수가 동일해야 함
         }
         self.producer = Producer(self.conf)
         self._set_logger()
