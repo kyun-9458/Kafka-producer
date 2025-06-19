@@ -47,6 +47,12 @@ bike_rent_counter = Counter(
     ['station_id', 'station_name']
 )
 
+location_metric = Gauge(
+    'bike_station_location',
+    '대여소 위치 정보 (위도, 경도를 라벨로)',
+    ['station_id', 'station_name', 'latitude', 'longitude']
+)
+
 previous_bike_counts = {}
 
 def start_exporter():
@@ -84,6 +90,9 @@ def start_exporter():
             rack_util_metric.labels(station_id, station_name).set(utilization)
             latitude_metric.labels(station_id, station_name).set(latitude)
             longitude_metric.labels(station_id, station_name).set(longitude)
+            location_metric.labels(
+                station_id, station_name, str(latitude), str(longitude)
+            ).set(1)
 
             # Rental counter logic
             key = (station_id, station_name)
