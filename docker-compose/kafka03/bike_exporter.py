@@ -14,7 +14,7 @@ TOPIC_NAME = 'seoul-bicycle-status'
 bike_count_metric = Gauge(
     'bike_available_count',
     '주차된 자전거 수',
-    ['station_id', 'station_name']
+    ['station_id', 'station_name', 'station_latitude', 'station_longitude']
 )
 
 rack_total_metric = Gauge(
