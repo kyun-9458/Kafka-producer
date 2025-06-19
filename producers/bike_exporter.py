@@ -57,8 +57,8 @@ def start_exporter():
         group_id='bike-exporter-group'
     )
 
-    print("Exporter is running on http://localhost:9308/metrics")
-    start_http_server(9308)
+    print("Exporter is running on http://kafka03:9310/metrics")
+    start_http_server(9310)
 
     for message in consumer:
         try:
