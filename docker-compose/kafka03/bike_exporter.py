@@ -85,7 +85,7 @@ def start_exporter():
             longitude = float(data.get("STT_LGTD", 0))
 
             # Update gauges
-            bike_count_metric.labels(station_id, station_name, str(latitude), str(longitude)).set(bike_count)
+            bike_count_metric.labels(station_id, station_name, latitude, longitude).set(bike_count)
             rack_total_metric.labels(station_id, station_name).set(rack_total)
             rack_util_metric.labels(station_id, station_name).set(utilization)
             latitude_metric.labels(station_id, station_name).set(latitude)
