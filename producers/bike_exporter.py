@@ -95,6 +95,12 @@ def start_exporter():
             print(f"Error processing message: {e}")
             continue
 
+    print("✅ Exported metrics:", {
+        "bike_count": bike_count,
+        "rack_total": rack_total,
+        "ratio": utilization
+    })
+
 if __name__ == "__main__":
     while True:
         try:
