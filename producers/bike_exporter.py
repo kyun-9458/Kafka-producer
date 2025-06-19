@@ -4,6 +4,8 @@ from prometheus_client import start_http_server, Gauge, Counter
 import json
 import time
 
+
+print("✅ bike_exporter.py 시작됨")  # ← 여기에 추가!
 # Kafka 설정
 KAFKA_BROKER = 'kafka01:9092,kafka02:9092,kafka03:9092'
 TOPIC_NAME = 'seoul-bicycle-status'
