@@ -9,3 +9,7 @@ scrape_configs:
   - job_name: 'kafka-exporter'        # 👈 커스텀 Exporter 추가
     static_configs:
       - targets: [ 'kafka-exporter:9308' ]  # 또는 docker-compose 환경에 맞게 변경
+
+  - job_name: 'bike_exporter'
+    static_configs:
+      - targets: ['bike_exporter:9310']

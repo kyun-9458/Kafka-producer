@@ -10,6 +10,18 @@ services:
     networks:
       - kpg_network
 
+  bike_exporter:
+    build:
+      context: .              # 현재 디렉토리에 Dockerfile과 py 파일이 있어야 함
+      dockerfile: Dockerfile
+    container_name: bike_exporter
+    restart: always
+    ports:
+      - "9310:9310"
+    networks:
+      - kpg_network
+
+
   prometheus:
     image: prom/prometheus
     container_name: prometheus
