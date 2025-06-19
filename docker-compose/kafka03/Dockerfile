@@ -5,7 +5,7 @@ FROM python:3.10-slim
 WORKDIR /app
 
 # Python 코드와 라이브러리 목록 복사
-COPY /src/kafka-producer/producers/bike_exporter.py .
+COPY bike_exporter.py .
 COPY requirements.txt .
 
 # 의존성 설치
