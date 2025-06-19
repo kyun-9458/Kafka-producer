@@ -10,4 +10,4 @@ COPY bike_exporter.py .
 ENV PYTHONUNBUFFERED=1
 
 EXPOSE 9310
-CMD ["python", "-u", "bike_exporter.py"]   #  -u 옵션: 완전 언버퍼드
+CMD ["python","-u","bike_exporter.py"]
