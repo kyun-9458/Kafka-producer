@@ -55,7 +55,7 @@ def start_exporter():
             value_deserializer=lambda m: json.loads(m.decode('utf-8')),
             auto_offset_reset='earliest',
             enable_auto_commit=True,
-            group_id='bike-exporter-debug4'
+            group_id='bike-exporter-debug45'
         )
     except Exception as e:
         print(f"❌ KafkaConsumer 생성 실패: {e}")
