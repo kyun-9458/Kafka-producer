@@ -54,12 +54,13 @@ def start_exporter():
         value_deserializer=lambda m: json.loads(m.decode('utf-8')),
         auto_offset_reset='earliest',
         enable_auto_commit=True,
-        group_id='bike-exporter-group-test2'
+        group_id='bike-exporter-debug4'
     )
 
     print("Exporter is running on http://kafka03:9310/metrics")
     start_http_server(9310)
 
+    print("🚀 Starting Kafka consumer loop...")
     for message in consumer:
         try:
             data = message.value
