@@ -61,8 +61,8 @@ def start_exporter():
         print(f"❌ KafkaConsumer 생성 실패: {e}")
         return
 
-    print("Exporter is running on http://kafka03:9308/metrics")
-    start_http_server(9308)
+    print("Exporter is running on http://kafka03:9310/metrics")
+    start_http_server(9310)
 
     print("🚀 Starting Kafka consumer loop...")
     for message in consumer:
