@@ -6,7 +6,7 @@ services:
     restart: always
     command: [ "--kafka.server=kafka01:9092", "--kafka.server=kafka02:9092", "--kafka.server=kafka03:9092" ]
     expose:
-      - 9308
+      - 9310
     networks:
       - kpg_network
 
