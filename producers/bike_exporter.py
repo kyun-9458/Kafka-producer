@@ -52,9 +52,9 @@ def start_exporter():
         TOPIC_NAME,
         bootstrap_servers=KAFKA_BROKER,
         value_deserializer=lambda m: json.loads(m.decode('utf-8')),
-        auto_offset_reset='latest',
+        auto_offset_reset='earliest',
         enable_auto_commit=True,
-        group_id='bike-exporter-group'
+        group_id='bike-exporter-group-test2'
     )
 
     print("Exporter is running on http://kafka03:9310/metrics")
