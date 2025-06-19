@@ -68,6 +68,7 @@ def start_exporter():
     for message in consumer:
         try:
             data = message.value
+            print(f"✅ 메시지 수신: {data}") # 수신 메시지 출력 테스트
 
             station_id = str(data.get("STT_ID"))
             station_name = str(data.get("STT_NM"))
